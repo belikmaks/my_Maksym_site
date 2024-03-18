@@ -36,7 +36,7 @@ jobs:
 
     - name: Update data file
       env:
-        SECRET_VARIABLE: ${{ secrets.SECRET_VARIABLE }} # Встановлюємо секретну змінну
+        SECRET_VARIABLE: ${{ secrets.SECRET_VARIABLE }} # Використовуємо секретну змінну
       run: |
         sed -i "s@<p id=\"myname\"></p>@<p id=\"myname\">$SECRET_VARIABLE</p>@g" index.html
         cat index.html
